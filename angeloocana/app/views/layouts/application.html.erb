@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Myapp" %></title>
+    <meta name="description" content="">
+    <meta name="author" content="Ângelo Ocanã">
+    <%= stylesheet_link_tag    "application" %>    
+    <!--[if IE 6]><%= stylesheet_link_tag 'ie6' %><![endif]-->
+    <!--[if IE 7]><%= stylesheet_link_tag 'ie7' %><![endif]-->
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <%= render 'layouts/navigation' %>            
+        </div>
+    </div>    
+    <div class="container body-content">
+      <%= render 'layouts/messages' %>
+        <%= yield %>
+        <hr />
+        <footer>
+            <p>&copy; <%= Date.today.year %> - Ângelo Ocanã</p>
+        </footer>
+    </div>
+
+    <%= javascript_include_tag "application" %>
+  </body>  
+</html>

@@ -1,0 +1,16 @@
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="well bs-component">
+				<%= simple_form_for @article, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
+                    <%= f.error_notification %>
+                    <%= f.input :title %>
+                    <%= f.input :date_on_page %>
+                    <%= f.input :display_in %>
+                    <%= f.input :text_html %>
+  					<%= f.button :submit %>
+				<% end %>
+        <br />
+        <%= link_to '<-- Back', articles_path %>
+         	</div>
+        </div>
+    </di
